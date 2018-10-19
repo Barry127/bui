@@ -88,7 +88,7 @@
     "docs:build": "node scripts/build.js",
     "predocs:deploy": "npm run docs:build",
     "docs:deploy": "gh-pages -d build",
-    "start": "npm-run-all --parallel start:docs docs:gen:watch",
+    "start": "npm-run-all --parallel docs:start docs:gen:watch",
     "test": "node scripts/test.js",
     "prepublish": "npm run build"
   },
@@ -130,5 +130,9 @@
   },
   "babel": {
     "presets": ["react-app"]
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2"
   }
 }
