@@ -1,6 +1,7 @@
 {
   "name": "@barry127/bui-build-template",
   "version": "0.1.0",
+  "description": "bui React Components",
   "private": true,
   "peerDependencies": {
     "react": "^16.0.0",
@@ -10,6 +11,13 @@
     "name": "Barry de Kleijn",
     "email": "kleijn.barry@gmail.com",
     "url": "https://github.com/barry127"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barry127/bui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Barry127/bui/issues"
   },
   "homepage": "http://barry127.github.io/bui/",
   "keywords": ["components", "react", "react-component", "toolkit"],
