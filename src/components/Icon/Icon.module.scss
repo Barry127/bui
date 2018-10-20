@@ -1,0 +1,23 @@
+@import '../_colors.scss';
+
+.icon {
+  box-sizing: border-box;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+}
+
+.none {
+  background: map-get($all-colors, red);
+  display: inline-block;
+}
+
+@each $name, $color in $all-colors {
+  .#{$name} {
+    fill: $color;
+  }
+}
+
+.inherit {
+  fill: currentColor;
+}
