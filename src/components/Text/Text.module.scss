@@ -1,0 +1,54 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.text {
+  @include default-text;
+  box-sizing: border-box;
+  color: $text-color;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.bold {
+  @include bold;
+}
+
+.medium {
+  @include medium;
+}
+
+.light {
+  @include light;
+}
+
+.italic {
+  @include italic;
+}
+
+.truncate {
+  @include truncate;
+}
+
+.underline {
+  @include underline;
+}
+
+@each $name, $color in $all-colors {
+  .#{$name} {
+    color: $color;
+  }
+}
