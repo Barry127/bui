@@ -14,10 +14,6 @@
 
 @each $name, $color in $all-colors {
   .#{$name} {
-    fill: $color;
+    color: $color;
   }
-}
-
-.inherit {
-  fill: currentColor;
 }
