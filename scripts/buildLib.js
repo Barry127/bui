@@ -30,7 +30,7 @@ function createPackageFile() {
   } = require('../package.json');
 
   const packageData = {
-    name: 'bui',
+    name: '@barry127/bui',
     author,
     version,
     description,

@@ -1,5 +1,5 @@
 {
-  "name": "bui-build-template",
+  "name": "@barry127/bui-build-template",
   "version": "0.1.0",
   "private": true,
   "peerDependencies": {
