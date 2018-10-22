@@ -1,0 +1,47 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.header {
+  @include default-header;
+  box-sizing: border-box;
+}
+
+.h1 {
+  @include h1;
+  color: map-get($all-colors, black);
+}
+
+.h2 {
+  @include h2;
+  color: map-get($all-colors, black);
+}
+
+.h3 {
+  @include h3;
+  color: map-get($all-colors, black);
+}
+
+.h4 {
+  @include h4;
+  color: map-get($all-colors, black);
+}
+
+.h5 {
+  @include h5;
+  color: map-get($all-colors, grey700);
+}
+
+.h6 {
+  @include h6;
+  color: map-get($all-colors, grey900);
+}
+
+.truncate {
+  @include truncate;
+}
+
+@each $name, $color in $all-colors {
+  .#{$name} {
+    color: $color;
+  }
+}

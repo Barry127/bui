@@ -5,6 +5,15 @@
   @include default-text;
   box-sizing: border-box;
   color: $text-color;
+
+  & > p {
+    margin-top: 0;
+    margin-bottom: 0.75em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .left {
