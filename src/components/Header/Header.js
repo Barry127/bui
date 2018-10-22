@@ -4,6 +4,9 @@ import cx from 'classnames';
 
 import styles from './Header.module.scss';
 
+/**
+ * The Header component renders headings in a larger size than regular text.
+ */
 const Header = ({ children, className, color, level, truncate, ...props }) => {
   const classes = cx(
     styles.header,
