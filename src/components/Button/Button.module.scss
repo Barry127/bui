@@ -1,0 +1,232 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.button {
+  @include default-text;
+  @include truncate;
+  box-sizing: border-box;
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 6px 12px 6px 0;
+  user-select: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+a.button {
+  display: inline-flex;
+  text-decoration: none;
+
+  & > * {
+    align-self: center;
+    flex: 1;
+  }
+}
+
+a.button.fluid {
+  display: flex;
+}
+
+.default {
+  $colors: (
+    main: map-get($all-colors, grey200),
+    hover: map-get($all-colors, coolgrey200),
+    active: map-get($all-colors, coolgrey300),
+    focus: map-get($all-colors, link)
+  );
+  @include button-color($colors);
+
+  &:focus:not(:active) {
+    box-shadow: 0 0 4px 4px rgba(map-get($colors, focus), 0.5);
+    background-color: map-get($colors, hover);
+    border-color: map-get($colors, hover);
+  }
+
+  &.outline {
+    background: transparent;
+    border-color: map-get($all-colors, coolgrey900);
+    color: map-get($all-colors, coolgrey900);
+
+    &:hover {
+      background-color: map-get($all-colors, coolgrey50);
+      color: darken(map-get($all-colors, coolgrey900), 10);
+      border-color: darken(map-get($all-colors, coolgrey900), 10);
+    }
+
+    &:active,
+    .active {
+      border-color: map-get($all-colors, black);
+      color: map-get($all-colors, black);
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px 2px rgba(map-get($all-colors, coolgrey900), 0.5);
+    }
+
+    &:focus:not(:active) {
+      background: transparent;
+    }
+  }
+}
+
+.primary {
+  $colors: (
+    main: map-get($all-colors, link),
+    hover: map-get($all-colors, blue700),
+    active: map-get($all-colors, blue800),
+    focus: map-get($all-colors, link),
+    light: map-get($all-colors, blue50)
+  );
+  @include button-color($colors);
+}
+
+.success {
+  $colors: (
+    main: map-get($all-colors, green600),
+    hover: map-get($all-colors, green700),
+    active: map-get($all-colors, green800),
+    focus: map-get($all-colors, green600),
+    light: map-get($all-colors, green50)
+  );
+  @include button-color($colors, map-get($all-colors, white));
+}
+
+.warning {
+  $colors: (
+    main: map-get($all-colors, yellow500),
+    hover: map-get($all-colors, yellow600),
+    active: map-get($all-colors, yellow700),
+    focus: map-get($all-colors, yellow500),
+    light: map-get($all-colors, yellow50)
+  );
+  @include button-color($colors);
+}
+
+.danger {
+  $colors: (
+    main: map-get($all-colors, red700),
+    hover: map-get($all-colors, red800),
+    active: map-get($all-colors, red900),
+    focus: map-get($all-colors, red700),
+    light: map-get($all-colors, red50)
+  );
+  @include button-color($colors, map-get($all-colors, white));
+}
+
+.info {
+  $colors: (
+    main: map-get($all-colors, cyan400),
+    hover: map-get($all-colors, cyan500),
+    active: map-get($all-colors, cyan600),
+    focus: map-get($all-colors, cyan400),
+    light: map-get($all-colors, cyan50)
+  );
+  @include button-color($colors, white);
+}
+
+.flat {
+  background: transparent;
+  border-width: 1.5px;
+  color: map-get($all-colors, link);
+
+  &:hover {
+    color: map-get($all-colors, blue800);
+  }
+
+  &:active,
+  .active {
+    border-color: map-get($all-colors, link);
+  }
+
+  &:focus:not(:active) {
+    box-shadow: 0 0 4px 4px rgba(map-get($all-colors, link), 0.5);
+  }
+}
+
+.sm {
+  @include medium;
+  height: 24px;
+  min-width: 72px;
+  max-width: 360px;
+  font-size: 10px;
+  letter-spacing: 0.073em;
+  padding: 0 12px;
+
+  &.icon {
+    min-width: 24px;
+    max-width: 24px;
+    padding: 0;
+  }
+
+  &:not(.icon) *[role='icon'] {
+    margin-top: -2px;
+  }
+}
+
+.md {
+  @include medium;
+  height: 36px;
+  min-width: 36px;
+  max-width: 360px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 0 12px;
+
+  &.icon {
+    max-width: 36px;
+    width: 36px;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  &:not(.icon) *[role='icon'] {
+    font-size: 16px !important;
+    margin-top: -2px;
+  }
+}
+
+.lg {
+  @include medium;
+  height: 48px;
+  min-width: 48px;
+  max-width: 360px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  padding: 0 18px;
+
+  &.icon {
+    max-width: 48px;
+    width: 48px;
+    font-size: 22px;
+    padding: 0;
+  }
+
+  &:not(.icon) *[role='icon'] {
+    font-size: 22px !important;
+    margin-top: -2px;
+    margin-right: 2px;
+  }
+}
+
+.fluid {
+  max-width: 100%;
+  width: 100%;
+}
