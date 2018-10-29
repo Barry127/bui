@@ -1,0 +1,149 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+$caret-size: 14px;
+
+.tooltip {
+  position: absolute;
+  z-index: 5000;
+  cursor: default;
+  font-size: $caret-size;
+}
+
+.content-container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.tooltip-content {
+  padding: 9px 12px;
+  border-radius: 3px;
+}
+
+.caret {
+  position: absolute;
+}
+
+.bottomLeft {
+  .caret {
+    top: -$caret-size;
+    left: $caret-size / 2;
+  }
+}
+
+.bottom {
+  .caret {
+    top: -$caret-size;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.bottomRight {
+  .caret {
+    top: -$caret-size;
+    right: $caret-size / 2;
+  }
+}
+
+.leftBottom {
+  .caret {
+    bottom: $caret-size / 2;
+    left: 100%;
+  }
+}
+
+.left {
+  .caret {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.leftTop {
+  .caret {
+    top: $caret-size / 2;
+    left: 100%;
+  }
+}
+
+.rightBottom {
+  .caret {
+    bottom: $caret-size / 2;
+    left: -$caret-size;
+  }
+}
+
+.right {
+  .caret {
+    top: 50%;
+    left: -$caret-size;
+    transform: translateY(-50%);
+  }
+}
+
+.rightTop {
+  .caret {
+    top: $caret-size / 2;
+    left: -$caret-size;
+  }
+}
+
+.topLeft {
+  .caret {
+    top: 100%;
+    left: $caret-size / 2;
+  }
+}
+
+.top {
+  .caret {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.topRight {
+  .caret {
+    top: 100%;
+    right: $caret-size / 2;
+  }
+}
+
+.sm {
+  max-width: 120px;
+}
+
+.md {
+  max-width: 240px;
+}
+
+.lg {
+  max-width: 360px;
+}
+
+.default {
+  @include tooltip-color(map-get($all-colors, black));
+}
+
+.primary {
+  @include tooltip-color(map-get($all-colors, link));
+}
+
+.success {
+  @include tooltip-color(map-get($all-colors, green500), white);
+}
+
+.warning {
+  @include tooltip-color(map-get($all-colors, yellow500), white);
+}
+
+.danger {
+  @include tooltip-color(map-get($all-colors, red700), white);
+}
+
+.info {
+  @include tooltip-color(map-get($all-colors, cyan400), white);
+}

@@ -321,3 +321,12 @@ $linear-channel-values: 0 0.0003035269835488375 0.000607053967097675
     }
   }
 }
+
+@mixin tooltip-color($color, $text: 'default') {
+  color: $color;
+
+  .tooltip-content {
+    background-color: $color;
+    color: if($text == 'default', choose-contrast-color($color), $text);
+  }
+}
