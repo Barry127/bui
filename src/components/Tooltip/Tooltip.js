@@ -52,7 +52,7 @@ class Tooltip extends Component {
       return { visible: props.visible };
     }
 
-    return {};
+    return null;
   }
 
   hide = () => {
