@@ -1,0 +1,128 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 6px 12px 6px 0;
+  position: relative;
+
+  & > input {
+    @include default-text;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 1px solid map-get($all-colors, grey300);
+    border-radius: 3px;
+    color: map-get($all-colors, black);
+    background: map-get($all-colors, white);
+
+    &:focus {
+      outline: none;
+      border-color: map-get($all-colors, link);
+      box-shadow: 0 0 4px 4px rgba(map-get($all-colors, link), 0.5);
+
+      & ~ .icon-container {
+        color: map-get($all-colors, black);
+      }
+    }
+
+    &:disabled {
+      background: map-get($all-colors, grey100);
+      color: map-get($all-colors, grey600);
+      user-select: none;
+
+      & ~ .icon-container {
+        color: map-get($all-colors, grey400);
+      }
+    }
+  }
+
+  & > input:invalid,
+  &.error > input {
+    color: map-get($all-colors, coolgrey800);
+    border-color: map-get($all-colors, red700);
+    background: map-get($all-colors, red50);
+
+    & ~ .icon-container {
+      color: map-get($all-colors, red200);
+    }
+
+    &:focus {
+      box-shadow: 0 0 4px 4px rgba(map-get($all-colors, red700), 0.5);
+
+      & ~ .icon-container {
+        color: map-get($all-colors, coolgrey800);
+      }
+    }
+  }
+
+  .icon-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: map-get($all-colors, grey500);
+  }
+}
+
+.sm {
+  & > input {
+    font-size: 12px;
+    height: 24px;
+    padding: 0 12px;
+  }
+
+  &.icon {
+    .icon-container {
+      font-size: 14px;
+      margin-top: -1px;
+      left: 6px;
+    }
+
+    & > input {
+      padding-left: 24px;
+    }
+  }
+}
+
+.md {
+  & > input {
+    font-size: 14px;
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  &.icon {
+    .icon-container {
+      font-size: 18px;
+      margin-top: -2px;
+      left: 6px;
+    }
+
+    & > input {
+      padding-left: 28px;
+    }
+  }
+}
+
+.lg {
+  & > input {
+    font-size: 16px;
+    height: 48px;
+    padding: 0 18px;
+  }
+
+  &.icon {
+    .icon-container {
+      font-size: 20px;
+      margin-top: -1px;
+      left: 9px;
+    }
+
+    & > input {
+      padding-left: 36px;
+    }
+  }
+}
