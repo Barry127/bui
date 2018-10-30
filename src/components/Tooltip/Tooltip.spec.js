@@ -44,24 +44,19 @@ it('Renders Tooltip with children', () => {
 });
 
 describe('className', () => {
-  it('Sets the className', () => {
+  it('Passes the className to TooltipContent', () => {
     const wrapper = defaultTooltip(true, '', { className: 'my-class' });
-    expect(wrapper.find(rootSelector).hasClass('my-class')).toBe(true);
+    expect(wrapper.find('TooltipContent').prop('className')).toBe('my-class');
   });
 });
 
 describe('color', () => {
-  it('Color is default by default', () => {
-    const wrapper = defaultTooltip();
-    expect(wrapper.find(rootSelector).hasClass(styles.default)).toBe(true);
-  });
-
-  it('Sets the color', () => {
+  it('Passes the color to TooltipContent', () => {
     const wrapper = defaultTooltip(true, '', { color: 'primary' });
-    expect(wrapper.find(rootSelector).hasClass(styles.primary)).toBe(true);
+    expect(wrapper.find('TooltipContent').prop('color')).toBe('primary');
 
     const wrapper2 = defaultTooltip(true, '', { color: 'danger' });
-    expect(wrapper2.find(rootSelector).hasClass(styles.danger)).toBe(true);
+    expect(wrapper2.find('TooltipContent').prop('color')).toBe('danger');
   });
 });
 
@@ -73,6 +68,7 @@ describe('position', () => {
       'left',
       100
     );
+    expect(wrapper.find('TooltipContent').prop('position')).toBe('top');
   });
 
   it('Sets the position', () => {
@@ -82,6 +78,7 @@ describe('position', () => {
       'left',
       50
     );
+    expect(wrapper.find('TooltipContent').prop('position')).toBe('topLeft');
 
     const wrapper2 = defaultTooltip(true, '', { position: 'bottomRight' });
     expect(wrapper2.find(rootSelector).hasClass(styles.bottomRight)).toBe(true);
@@ -89,18 +86,16 @@ describe('position', () => {
       'left',
       150
     );
+    expect(wrapper2.find('TooltipContent').prop('position')).toBe(
+      'bottomRight'
+    );
   });
 });
 
 describe('size', () => {
-  it('Is md by default', () => {
-    const wrapper = defaultTooltip();
-    expect(wrapper.find(rootSelector).hasClass(styles.md)).toBe(true);
-  });
-
-  it('Sets the size', () => {
+  it('Passes the size to TooltipContent', () => {
     const wrapper = defaultTooltip(true, '', { size: 'lg' });
-    expect(wrapper.find(rootSelector).hasClass(styles.lg)).toBe(true);
+    expect(wrapper.find('TooltipContent').prop('size')).toBe('lg');
   });
 });
 
@@ -151,5 +146,17 @@ describe('visible', () => {
     const wrapper = defaultTooltip(false);
     expect(wrapper.state().visible).toBe(false);
     expect(wrapper.find(containerSelector).length).toBe(0);
+  });
+});
+
+describe('props', () => {
+  it('Passes props to TooltipContent', () => {
+    const wrapper = defaultTooltip(true, '', {
+      id: 'tt-id',
+      'data-text': 'tt Text'
+    });
+
+    expect(wrapper.find('TooltipContent').prop('id')).toBe('tt-id');
+    expect(wrapper.find('TooltipContent').prop('data-text')).toBe('tt Text');
   });
 });
