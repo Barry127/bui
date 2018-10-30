@@ -32,6 +32,7 @@ const Text = ({
       [styles.truncate]: truncate,
       [styles.underline]: underline
     },
+    'bui-Text',
     className
   );
 

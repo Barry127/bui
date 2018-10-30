@@ -42,7 +42,7 @@ class Icon extends Component {
       ...props
     } = this.props;
 
-    const classes = cx(styles.icon, styles[color], className);
+    const classes = cx(styles.icon, styles[color], 'bui-Icon', className);
 
     const cssStyle = {
       fontSize: size,

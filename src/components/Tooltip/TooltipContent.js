@@ -36,6 +36,7 @@ const TooltipContent = ({
     styles[color],
     styles[position],
     styles[size],
+    'bui-Tooltip',
     className
   );
 

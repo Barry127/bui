@@ -15,6 +15,7 @@ const Header = ({ children, className, color, level, truncate, ...props }) => {
     {
       [styles.truncate]: truncate
     },
+    'bui-Header',
     className
   );
 

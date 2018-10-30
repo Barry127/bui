@@ -31,6 +31,7 @@ const Button = ({
       [styles.icon]: icon,
       [styles.outline]: outline
     },
+    'bui-Button',
     className
   );
 
