@@ -12,7 +12,7 @@ import uniqueId from '../../lib/uniqueId';
  * Inputs are the most commonly used form control and allow for text input
  *
  */
-class Input extends Component {
+class TextInput extends Component {
   state = {
     hasFocus: false
   };
@@ -140,4 +140,4 @@ class Input extends Component {
   };
 }
 
-export default Input;
+export default TextInput;
