@@ -39,6 +39,7 @@ class Input extends Component {
 
   render() {
     const {
+      children,
       className,
       errorMessage,
       errorPosition,
@@ -86,11 +87,14 @@ class Input extends Component {
             <Icon icon={icon} />
           </div>
         )}
+        {children}
       </div>
     );
   }
 
   static propTypes = {
+    /** Children to render inside TextInput container */
+    children: p.node,
     /** Classname for TextInput component */
     className: p.string,
     /** Is the TextInput disabled */

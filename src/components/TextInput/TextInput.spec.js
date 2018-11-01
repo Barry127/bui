@@ -15,6 +15,13 @@ const defaultTextInput = (props = {}) =>
 it('Renders TextInput with children', () => {
   const wrapper = defaultTextInput();
   expect(wrapper.find(rootSelector).length).toBe(1);
+
+  const wrapper2 = shallow(
+    <TextInput id="my-text" name="my-text">
+      Child
+    </TextInput>
+  );
+  expect(wrapper2.find(rootSelector).text()).toBe('Child');
 });
 
 describe('className', () => {
