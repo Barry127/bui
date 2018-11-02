@@ -45,6 +45,7 @@ class TextInput extends Component {
       errorPosition,
       hasError,
       icon,
+      innerRef,
       onBlur,
       onFocus,
       size,
@@ -70,7 +71,12 @@ class TextInput extends Component {
 
     return (
       <div id={this.id} className={classes}>
-        <input onBlur={this.onBlur} onFocus={this.onFocus} {...props} />
+        <input
+          onBlur={this.onBlur}
+          onFocus={this.onFocus}
+          ref={innerRef}
+          {...props}
+        />
         {errorMessage && (
           <Tooltip
             targetId={this.id}
