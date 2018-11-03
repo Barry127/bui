@@ -52,6 +52,7 @@ class PasswordInput extends Component {
       {
         [styles.reveal]: !hideReveal
       },
+      'bui-PasswordInput',
       className
     );
 
