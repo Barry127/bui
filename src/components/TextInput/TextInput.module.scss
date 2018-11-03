@@ -7,6 +7,7 @@
   width: 100%;
   margin: 6px 12px 6px 0;
   position: relative;
+  border-radius: 3px;
 
   & > input {
     @include default-text;
@@ -15,7 +16,7 @@
     width: 100%;
     margin: 0;
     border: 1px solid map-get($all-colors, grey300);
-    border-radius: 3px;
+    border-radius: inherit;
     color: map-get($all-colors, black);
     background: map-get($all-colors, white);
 
