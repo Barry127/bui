@@ -1,4 +1,5 @@
 import Button from './Button';
+import ButtonGroup from './ButtonGroup';
 import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
@@ -12,6 +13,7 @@ export { registerIcon } from './Icon/library';
 
 export {
   Button,
+  ButtonGroup,
   Header,
   Icon,
   InputGroup,
