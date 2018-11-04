@@ -4,8 +4,9 @@ import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
 import PasswordInput from './PasswordInput';
-import TextInput from './TextInput';
 import Text from './Text';
+import TextInput from './TextInput';
+import TextArea from './TextArea';
 import Tooltip from './Tooltip';
 import TypeAheadInput from './TypeAheadInput';
 
@@ -20,6 +21,7 @@ export {
   PasswordInput,
   Text,
   TextInput,
+  TextArea,
   Tooltip,
   TypeAheadInput
 };

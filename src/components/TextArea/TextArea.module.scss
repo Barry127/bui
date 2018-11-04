@@ -1,0 +1,69 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  position: relative;
+  border-radius: 3px;
+
+  & > textarea {
+    @include default-text;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 1px solid map-get($all-colors, grey300);
+    border-radius: inherit;
+    color: map-get($all-colors, black);
+    background: map-get($all-colors, white);
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-color: map-get($all-colors, link);
+      box-shadow: 0 0 4px 4px rgba(map-get($all-colors, link), 0.5);
+    }
+
+    &:disabled {
+      background: map-get($all-colors, grey100);
+      color: map-get($all-colors, grey600);
+      user-select: none;
+    }
+  }
+
+  & > textarea:invalid,
+  &.error > textarea {
+    color: map-get($all-colors, coolgrey800);
+    border-color: map-get($all-colors, red700);
+    background: map-get($all-colors, red50);
+
+    &:focus {
+      box-shadow: 0 0 4px 4px rgba(map-get($all-colors, red700), 0.5);
+    }
+  }
+}
+
+.sm {
+  & > textarea {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 2px 12px;
+  }
+}
+
+.md {
+  & > textarea {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+.lg {
+  & > textarea {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}
