@@ -1,4 +1,4 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import p from 'prop-types';
 import cx from 'classnames';
 
