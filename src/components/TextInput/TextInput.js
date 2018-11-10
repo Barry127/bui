@@ -23,6 +23,8 @@ class TextInput extends Component {
     this.tooltipId = uniqueId();
   }
 
+  focus = () => this.input.focus();
+
   onBlur = ev => {
     const { onBlur } = this.props;
 
@@ -35,6 +37,15 @@ class TextInput extends Component {
 
     this.setState({ hasFocus: true });
     if (onFocus) onFocus(ev);
+  };
+
+  setRef = ref => {
+    const { innerRef } = this.props;
+    this.input = ref;
+
+    if (typeof innerRef === 'function') {
+      innerRef(ref);
+    }
   };
 
   render() {
@@ -74,7 +85,7 @@ class TextInput extends Component {
         <input
           onBlur={this.onBlur}
           onFocus={this.onFocus}
-          ref={innerRef}
+          ref={this.setRef}
           {...props}
         />
         {errorMessage && (
@@ -90,7 +101,7 @@ class TextInput extends Component {
         )}
         {icon && (
           <div className={styles['icon-container']}>
-            <Icon icon={icon} />
+            <Icon icon={icon} onClick={this.focus} />
           </div>
         )}
         {children}
