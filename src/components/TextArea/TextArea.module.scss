@@ -34,8 +34,8 @@
     }
   }
 
-  & > textarea:invalid,
-  &.error > textarea {
+  & > textarea:invalid:not(:disabled),
+  &.error > textarea:not(:disabled) {
     color: map-get($all-colors, coolgrey800);
     border-color: map-get($all-colors, red700);
     background: map-get($all-colors, red50);

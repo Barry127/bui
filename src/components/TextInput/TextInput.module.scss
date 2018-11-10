@@ -41,8 +41,8 @@
     }
   }
 
-  & > input:invalid,
-  &.error > input {
+  & > input:invalid:not(:disabled),
+  &.error > input:not(:disabled) {
     color: map-get($all-colors, coolgrey800);
     border-color: map-get($all-colors, red700);
     background: map-get($all-colors, red50);
