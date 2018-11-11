@@ -1,0 +1,62 @@
+@import '../_colors.scss';
+
+.form {
+  .row {
+    display: flex;
+  }
+
+  &.horizontal {
+    .label {
+      width: 20%;
+      max-width: 360px;
+      text-align: right;
+    }
+
+    .input {
+      flex: 1;
+    }
+  }
+
+  &.vertical {
+    .row {
+      flex-direction: column;
+    }
+
+    .label label {
+      padding-bottom: 0;
+    }
+  }
+
+  &.inline {
+    display: flex;
+
+    .row + .row {
+      margin-left: 12px;
+    }
+  }
+}
+
+.label {
+  label {
+    display: block;
+    padding: 12px 12px 12px 0;
+  }
+
+  &.lg label {
+    font-size: 16px;
+    padding: 18px 12px 18px 0;
+  }
+
+  &.sm label {
+    font-size: 12px;
+    padding: 6px 12px 6px 0;
+  }
+
+  &.error {
+    color: map-get($all-colors, red800);
+  }
+
+  &.disabled {
+    color: map-get($all-colors, grey);
+  }
+}

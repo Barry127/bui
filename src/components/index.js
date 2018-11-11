@@ -1,5 +1,13 @@
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
+import Form, {
+  FormLabel,
+  FormPasswordInput,
+  FormRow,
+  FormTextArea,
+  FormTextInput,
+  FormTypeAheadInput
+} from './Form';
 import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
@@ -15,6 +23,13 @@ export { registerIcon } from './Icon/library';
 export {
   Button,
   ButtonGroup,
+  Form,
+  FormRow,
+  FormLabel,
+  FormPasswordInput,
+  FormTextArea,
+  FormTextInput,
+  FormTypeAheadInput,
   Header,
   Icon,
   InputGroup,

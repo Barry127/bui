@@ -20,12 +20,7 @@
     "url": "https://github.com/Barry127/bui/issues"
   },
   "homepage": "http://barry127.github.io/bui/",
-  "keywords": [
-    "components",
-    "react",
-    "react-component",
-    "toolkit"
-  ],
+  "keywords": ["components", "react", "react-component", "toolkit"],
   "devDependencies": {
     "@babel/core": "7.1.0",
     "@barry127/bui-feather-icons": "^0.1.0",
@@ -114,25 +109,25 @@
       "prettier",
       "prettier/react"
     ],
-    "plugins": [
-      "jsx-a11y"
-    ]
+    "plugins": ["jsx-a11y"],
+    "rules": {
+      "jsx-a11y/label-has-for": [
+        2,
+        {
+          "components": ["Label"],
+          "required": {
+            "some": ["nesting", "id"]
+          },
+          "allowChildren": true
+        }
+      ]
+    }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "resolver": "jest-pnp-resolver",
-    "setupFiles": [
-      "react-app-polyfill/jsdom",
-      "./config/jest/enzyme.js"
-    ],
+    "setupFiles": ["react-app-polyfill/jsdom", "./config/jest/enzyme.js"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx}"
@@ -152,19 +147,10 @@
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "dependencies": {
     "classnames": "^2.2.6",
