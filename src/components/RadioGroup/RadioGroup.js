@@ -21,7 +21,12 @@ const RadioGroup = ({
   size,
   value
 }) => {
-  const classes = cx(styles.group, 'bui-RadioGroup', { inline }, className);
+  const classes = cx(
+    styles.group,
+    'bui-RadioGroup',
+    { [styles.inline]: inline },
+    className
+  );
 
   return (
     <div className={classes}>
