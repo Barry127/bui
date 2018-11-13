@@ -12,6 +12,7 @@ import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
 import PasswordInput from './PasswordInput';
+import RadioGroup, { RadioButton } from './RadioGroup';
 import Text from './Text';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
@@ -34,6 +35,8 @@ export {
   Icon,
   InputGroup,
   PasswordInput,
+  RadioButton,
+  RadioGroup,
   Text,
   TextInput,
   TextArea,
