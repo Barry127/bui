@@ -1,0 +1,157 @@
+@import '../_colors.scss';
+
+.checkbox {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 3px 12px 3px 0;
+
+  input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    position: absolute;
+
+    & + .box {
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid map-get($all-colors, grey300);
+      vertical-align: middle;
+      position: relative;
+      transition: border-color 0.1s ease-in, box-shadow 0.1s ease-in;
+
+      & + span {
+        vertical-align: middle;
+        line-height: 1;
+      }
+
+      .checked,
+      .indeterminate {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .checked {
+        color: map-get($all-colors, white);
+        background: map-get($all-colors, link);
+      }
+
+      .indeterminate {
+        color: map-get($all-colors, link);
+      }
+    }
+
+    &:checked + .box,
+    &:indeterminate + .box {
+      border-color: map-get($all-colors, link);
+    }
+
+    &:focus + .box {
+      border-color: map-get($all-colors, link);
+      box-shadow: 0 0 2px 2px rgba(map-get($all-colors, link), 0.5);
+    }
+
+    &:active + .box {
+      border-color: map-get($all-colors, blue700);
+
+      .checked {
+        background: map-get($all-colors, blue700);
+      }
+    }
+  }
+
+  &.error input,
+  &input:invalid {
+    & + .box {
+      border-color: map-get($all-colors, red700);
+
+      .checked {
+        background: map-get($all-colors, red700);
+      }
+
+      .indeterminate {
+        color: map-get($all-colors, red700);
+      }
+
+      & + span {
+        color: map-get($all-colors, red800);
+      }
+    }
+
+    &:focus + .box {
+      border-color: map-get($all-colors, red700);
+      box-shadow: 0 0 2px 2px rgba(map-get($all-colors, red700), 0.5);
+    }
+
+    &:active + .box .checked {
+      background: map-get($all-colors, red800);
+    }
+  }
+
+  input:disabled {
+    & + .box {
+      background: map-get($all-colors, grey100);
+      border-color: map-get($all-colors, grey300);
+
+      .checked {
+        background: map-get($all-colors, grey500);
+      }
+
+      .indeterminate {
+        color: map-get($all-colors, grey500);
+      }
+
+      & + span {
+        color: map-get($all-colors, grey);
+      }
+    }
+  }
+}
+
+.sm {
+  input + .box {
+    height: 12px;
+    width: 12px;
+    font-size: 12px;
+    margin-right: 8px;
+
+    & + span {
+      font-size: 12px;
+    }
+  }
+}
+
+.md {
+  input + .box {
+    height: 14px;
+    width: 14px;
+    font-size: 14px;
+    margin-right: 8px;
+
+    & + span {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.lg {
+  input + .box {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+    margin-right: 8px;
+
+    & + span {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+}

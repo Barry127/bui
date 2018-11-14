@@ -1,5 +1,6 @@
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
+import Checkbox from './Checkbox';
 import Form, {
   FormLabel,
   FormPasswordInput,
@@ -25,6 +26,7 @@ export { registerIcon } from './Icon/library';
 export {
   Button,
   ButtonGroup,
+  Checkbox,
   Form,
   FormRadioGroup,
   FormRow,
