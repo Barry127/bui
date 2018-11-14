@@ -61,36 +61,38 @@
   }
 }
 
-.row.radioGroup {
-  .label label {
-    padding-top: 5.5px;
-    padding-bottom: 5.5px;
-  }
-
-  .lg.label label {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .sm.label label {
-    padding-top: 5.5px;
-    padding-bottom: 5.5px;
-  }
-
-  &.radioInline {
+.form.horizontal {
+  .row.radioGroup {
     .label label {
-      padding-top: 7px;
-      padding-bottom: 7px;
+      padding-top: 5.5px;
+      padding-bottom: 5.5px;
     }
 
     .lg.label label {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
 
     .sm.label label {
-      padding-top: 7px;
-      padding-bottom: 7px;
+      padding-top: 5.5px;
+      padding-bottom: 5.5px;
+    }
+
+    &.radioInline {
+      .label label {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      .lg.label label {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .sm.label label {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
     }
   }
 }
