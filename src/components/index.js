@@ -3,6 +3,7 @@ import ButtonGroup from './ButtonGroup';
 import Form, {
   FormLabel,
   FormPasswordInput,
+  FormRadioGroup,
   FormRow,
   FormTextArea,
   FormTextInput,
@@ -25,6 +26,7 @@ export {
   Button,
   ButtonGroup,
   Form,
+  FormRadioGroup,
   FormRow,
   FormLabel,
   FormPasswordInput,

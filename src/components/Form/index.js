@@ -1,6 +1,7 @@
 import forwardRef from '../../lib/forwardRef';
 
 import FormLabel from './FormLabel';
+import FormRadioGroup from './FormRadioGroup';
 import FormRow from './FormRow';
 import FPasswordInput from './FormPasswordInput';
 import FTextArea from './FormTextArea';
@@ -16,6 +17,7 @@ export { default } from './Form';
 export {
   FormLabel,
   FormPasswordInput,
+  FormRadioGroup,
   FormRow,
   FormTextArea,
   FormTextInput,
