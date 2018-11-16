@@ -48,6 +48,7 @@ class Checkbox extends Component {
       className,
       hasError,
       indeterminate,
+      innerRef,
       size,
       ...props
     } = this.props;
