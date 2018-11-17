@@ -71,6 +71,7 @@ class PasswordInput extends Component {
             icon
             size={size}
             onClick={this.toggleVisible}
+            tabIndex={-1}
           >
             <Icon icon={visible ? 'bui-eye-slash' : 'bui-eye'} />
           </Button>
