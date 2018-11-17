@@ -1,0 +1,27 @@
+@mixin scrollbars($border: true, $borderColor: white) {
+  &::-webkit-scrollbar {
+    background: transparent;
+    position: absolute;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    @if $border == true {
+      border: 1px solid $borderColor;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
