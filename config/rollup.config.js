@@ -7,7 +7,10 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 
-process.env.NODE_ENV = 'production';
+import packageJson from '../package.json';
+
+/* We want prop-types to be included */
+process.env.NODE_ENV = 'development';
 
 const plugins = [
   postcss({
@@ -21,7 +24,10 @@ const plugins = [
   commonjs()
 ];
 
-const external = ['react'];
+const external = [
+  ...Object.keys(packageJson.peerDependencies),
+  ...Object.keys(packageJson.dependencies)
+];
 
 const configs = [
   {
