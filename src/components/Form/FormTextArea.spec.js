@@ -23,6 +23,20 @@ it('Renders FormTextArea with children', () => {
   expect(wrapper2.find('div').text()).toBe('Content');
 });
 
+describe('aria', () => {
+  it('sets FormRow id', () => {
+    const wrapper = defaultFormTextArea();
+    expect(wrapper.find('FormRow').prop('id')).toBe(wrapper.instance().labelId);
+  });
+
+  it('sets TextArea aria-labelledby', () => {
+    const wrapper = defaultFormTextArea();
+    expect(wrapper.find('TextArea').prop('aria-labelledby')).toBe(
+      wrapper.instance().labelId
+    );
+  });
+});
+
 describe('disabled', () => {
   it('Is not disabled default', () => {
     const wrapper = defaultFormTextArea();

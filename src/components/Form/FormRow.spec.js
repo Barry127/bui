@@ -72,6 +72,18 @@ describe('htmlFor', () => {
   });
 });
 
+describe('id', () => {
+  it('Sets the id', () => {
+    const wrapper = defaultFormRow({
+      id: 'label-id',
+      label: 'yes',
+      htmlFor: 'id'
+    });
+    expect(wrapper.find('#label-id').length).toBe(1);
+    expect(wrapper.find('FormLabel').prop('id')).toBe('label-id');
+  });
+});
+
 describe('label', () => {
   it('Renders no label by default', () => {
     const wrapper = defaultFormRow();

@@ -23,6 +23,20 @@ it('Renders FormTypeAheadInput with children', () => {
   expect(wrapper2.find('div').text()).toBe('Content');
 });
 
+describe('aria', () => {
+  it('sets FormRow id', () => {
+    const wrapper = defaultFormTypeAheadInput();
+    expect(wrapper.find('FormRow').prop('id')).toBe(wrapper.instance().labelId);
+  });
+
+  it('sets TypeAheadInput aria-labelledby', () => {
+    const wrapper = defaultFormTypeAheadInput();
+    expect(wrapper.find('TypeAheadInput').prop('aria-labelledby')).toBe(
+      wrapper.instance().labelId
+    );
+  });
+});
+
 describe('disabled', () => {
   it('Is not disabled default', () => {
     const wrapper = defaultFormTypeAheadInput();

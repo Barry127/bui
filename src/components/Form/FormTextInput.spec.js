@@ -23,6 +23,20 @@ it('Renders FormTextInput with children', () => {
   expect(wrapper2.find('div').text()).toBe('Content');
 });
 
+describe('aria', () => {
+  it('sets FormRow id', () => {
+    const wrapper = defaultFormTextInput();
+    expect(wrapper.find('FormRow').prop('id')).toBe(wrapper.instance().labelId);
+  });
+
+  it('sets TextInput aria-labelledby', () => {
+    const wrapper = defaultFormTextInput();
+    expect(wrapper.find('TextInput').prop('aria-labelledby')).toBe(
+      wrapper.instance().labelId
+    );
+  });
+});
+
 describe('disabled', () => {
   it('Is not disabled default', () => {
     const wrapper = defaultFormTextInput();

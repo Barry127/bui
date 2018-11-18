@@ -23,6 +23,20 @@ it('Renders FormPasswordInput with children', () => {
   expect(wrapper2.find('div').text()).toBe('Content');
 });
 
+describe('aria', () => {
+  it('sets FormRow id', () => {
+    const wrapper = defaultFormPasswordInput();
+    expect(wrapper.find('FormRow').prop('id')).toBe(wrapper.instance().labelId);
+  });
+
+  it('sets PasswordInput aria-labelledby', () => {
+    const wrapper = defaultFormPasswordInput();
+    expect(wrapper.find('PasswordInput').prop('aria-labelledby')).toBe(
+      wrapper.instance().labelId
+    );
+  });
+});
+
 describe('disabled', () => {
   it('Is not disabled default', () => {
     const wrapper = defaultFormPasswordInput();

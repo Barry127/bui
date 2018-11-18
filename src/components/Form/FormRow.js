@@ -15,6 +15,7 @@ const FormRow = ({
   disabled,
   hasError,
   htmlFor,
+  id,
   label,
   size
 }) => {
@@ -36,6 +37,7 @@ const FormRow = ({
           disabled={disabled}
           hasError={hasError}
           htmlFor={htmlFor}
+          id={id}
           size={size}
         >
           {typeof label === 'function' ? label() : label}
@@ -57,6 +59,8 @@ FormRow.propTypes = {
   disabled: p.bool,
   /** is the Label styled as error */
   hasError: p.bool,
+  /** id for the label field */
+  id: p.string,
   /** id of input control the label is pointed to */
   htmlFor: p.string,
   /** label (empty is no label) */
