@@ -14,6 +14,11 @@ import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
 import PasswordInput from './PasswordInput';
+import Progress, {
+  ProgressBar,
+  ProgressCircle,
+  ProgressDash
+} from './Progress';
 import RadioGroup, { RadioButton } from './RadioGroup';
 import Select from './Select';
 import Text from './Text';
@@ -40,6 +45,10 @@ export {
   Icon,
   InputGroup,
   PasswordInput,
+  Progress,
+  ProgressBar,
+  ProgressCircle,
+  ProgressDash,
   RadioButton,
   RadioGroup,
   Select,

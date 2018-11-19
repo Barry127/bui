@@ -1,0 +1,149 @@
+@import '../_colors.scss';
+
+.progress {
+  box-sizing: border-box;
+  margin: 6px 0 6px 0;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+
+  .outer {
+    flex: 1;
+    background: map-get($all-colors, grey200);
+    position: relative;
+    overflow: hidden;
+
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      transform-origin: left;
+    }
+  }
+
+  .content {
+    box-sizing: border-box;
+    min-width: 36px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  &.active {
+    .inner::before {
+      content: '.';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      color: map-get($all-colors, white);
+      background: map-get($all-colors, white);
+      transform-origin: left;
+      animation: activeBar 2.5s ease-in-out infinite;
+    }
+  }
+
+  &.indeterminate {
+    .inner {
+      transform: scaleX(0.6) translateX(-100%);
+      animation: indeterminateBar 2.5s ease-in-out infinite;
+    }
+  }
+}
+
+.circle,
+.dash {
+  margin: 6px 12px 6px 0;
+  display: inline-block;
+  position: relative;
+  stroke-linecap: round;
+
+  .ring {
+    .track {
+      fill: transparent;
+      stroke: map-get($all-colors, grey200);
+    }
+
+    .bar {
+      fill: transparent;
+    }
+  }
+
+  .content {
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.circle {
+  &.indeterminate {
+    .bar {
+      transform-origin: center center;
+      animation: indeterminateCircle 2s linear infinite;
+    }
+  }
+}
+
+.primary {
+  @include progress-color(map-get($all-colors, blue500));
+}
+
+.success {
+  @include progress-color(map-get($all-colors, green400));
+}
+
+.warning {
+  @include progress-color(map-get($all-colors, yellow400));
+}
+
+.danger {
+  @include progress-color(map-get($all-colors, red600));
+}
+
+.info {
+  @include progress-color(map-get($all-colors, cyan300));
+}
+
+@keyframes indeterminateBar {
+  from {
+    transform: scaleX(0.6) translateX(-100%);
+  }
+
+  to {
+    transform: scaleX(0.6) translateX(175%);
+  }
+}
+
+@keyframes activeBar {
+  0% {
+    opacity: 0.1;
+    transform: scaleX(0);
+  }
+
+  20% {
+    opacity: 0.5;
+    transform: scaleX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes indeterminateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
