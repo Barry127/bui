@@ -1,3 +1,4 @@
+import Affix from './Affix';
 import Badge from './Badge';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
@@ -31,6 +32,7 @@ import TypeAheadInput from './TypeAheadInput';
 export { registerIcon } from './Icon/library';
 
 export {
+  Affix,
   Badge,
   Button,
   ButtonGroup,
