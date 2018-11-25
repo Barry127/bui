@@ -6,7 +6,7 @@ import styles from './Tooltip.module.scss';
 
 import Icon from '../Icon';
 import Text from '../Text';
-import './icons';
+import '../icons';
 
 const ICON_MAP = {
   bottomLeft: '@bui-caret-up',
