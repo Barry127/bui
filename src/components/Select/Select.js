@@ -5,7 +5,7 @@ import Downshift from 'downshift';
 import find from 'lodash/find';
 
 import styles from './Select.module.scss';
-import './icons';
+import '../icons';
 
 import Button from '../Button';
 import Icon from '../Icon';

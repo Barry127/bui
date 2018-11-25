@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { Transition, config } from 'react-spring';
 
 import styles from './Checkbox.module.scss';
-import './icons';
+import '../icons';
 
 import Icon from '../Icon';
 import Text from '../Text';

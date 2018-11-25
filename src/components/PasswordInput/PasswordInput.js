@@ -3,7 +3,7 @@ import p from 'prop-types';
 import cx from 'classnames';
 
 import styles from './PasswordInput.module.scss';
-import './icons';
+import '../icons';
 
 import Button from '../Button';
 import Icon from '../Icon';
