@@ -1,3 +1,4 @@
+import Badge from './Badge';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Checkbox from './Checkbox';
@@ -30,6 +31,7 @@ import TypeAheadInput from './TypeAheadInput';
 export { registerIcon } from './Icon/library';
 
 export {
+  Badge,
   Button,
   ButtonGroup,
   Checkbox,

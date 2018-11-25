@@ -1,0 +1,71 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.container {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  & > * {
+    margin: 0 !important;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid map-get($all-colors, white);
+    transform-origin: center center;
+  }
+}
+
+.badge {
+  @include default-text;
+  box-sizing: border-box;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+
+  &.inline {
+    margin-top: -1px;
+    height: 14px;
+    min-width: 14px;
+    padding: 0 4px;
+
+    span {
+      font-size: 10px;
+    }
+  }
+
+  span {
+    font-size: 12px;
+    @include medium;
+  }
+}
+
+.default {
+  @include badge-color(map-get($all-colors, red600));
+}
+
+.success {
+  @include badge-color(map-get($all-colors, green700));
+}
+
+.warning {
+  @include badge-color(map-get($all-colors, yellow300));
+}
+
+.danger {
+  @include badge-color(map-get($all-colors, red800));
+}
+
+.info {
+  @include badge-color(map-get($all-colors, link));
+}
