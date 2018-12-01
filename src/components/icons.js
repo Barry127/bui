@@ -362,29 +362,21 @@ const featherIcons = [
       },
       children: [
         {
-          tag: 'circle',
+          tag: 'line',
           attrs: {
-            cx: 12,
-            cy: 12,
-            r: 10
+            x1: 18,
+            y1: 6,
+            x2: 6,
+            y2: 18
           }
         },
         {
           tag: 'line',
           attrs: {
-            x1: 15,
-            y1: 9,
-            x2: 9,
-            y2: 15
-          }
-        },
-        {
-          tag: 'line',
-          attrs: {
-            x1: 9,
-            y1: 9,
-            x2: 15,
-            y2: 15
+            x1: 6,
+            y1: 6,
+            x2: 18,
+            y2: 18
           }
         }
       ]
