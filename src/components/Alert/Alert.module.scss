@@ -1,0 +1,163 @@
+@import '../_colors.scss';
+
+.alert {
+  box-sizing: border-box;
+  margin: 6px 0;
+  border: 1px solid;
+  transform-origin: center center;
+  border-radius: 3px;
+  display: flex;
+  font-size: 13px;
+  padding: 6px 12px;
+
+  .iconContainer {
+    font-size: 16px;
+    margin-right: 12px;
+    align-self: flex-start;
+  }
+
+  .text {
+    font-size: inherit;
+    align-self: center;
+    flex: 1;
+  }
+
+  .closeContainer {
+    margin-left: 12px;
+    align-self: flex-start;
+    margin: -12px -12px -12px 12px;
+
+    button {
+      color: map-get($all-colors, grey600);
+
+      &:hover {
+        color: map-get($all-colors, black);
+      }
+    }
+  }
+
+  &.hasTitle {
+    .iconContainer {
+      font-size: 20px;
+    }
+  }
+}
+
+.success {
+  @include alert-color(
+    map-get($all-colors, green50),
+    map-get($all-colors, green400),
+    map-get($all-colors, green700)
+  );
+}
+
+.info {
+  @include alert-color(
+    map-get($all-colors, blue50),
+    map-get($all-colors, blue400),
+    map-get($all-colors, link)
+  );
+}
+
+.warning {
+  @include alert-color(
+    map-get($all-colors, yellow100),
+    map-get($all-colors, yellow300),
+    map-get($all-colors, grey700)
+  );
+}
+
+.danger {
+  @include alert-color(
+    map-get($all-colors, red100),
+    map-get($all-colors, red200),
+    map-get($all-colors, red800)
+  );
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  .nav {
+    width: 128px;
+
+    button {
+      line-height: 1;
+      font-size: 1em;
+      margin: 6px 0;
+      color: map-get($all-colors, white);
+      border-color: transparent !important;
+    }
+  }
+
+  .alert {
+    margin: 0;
+    border: 0;
+    flex: 1;
+    border-radius: 0;
+
+    .text {
+      color: map-get($all-colors, white);
+    }
+
+    .closeContainer {
+      button {
+        color: map-get($all-colors, white);
+      }
+    }
+  }
+
+  &.success {
+    .nav {
+      background: map-get($all-colors, green800);
+    }
+
+    .alert {
+      @include alert-color(
+        map-get($all-colors, green700),
+        map-get($all-colors, white)
+      );
+    }
+  }
+
+  &.info {
+    .nav {
+      background: map-get($all-colors, cyan900);
+    }
+
+    .alert {
+      @include alert-color(
+        map-get($all-colors, link),
+        map-get($all-colors, white)
+      );
+    }
+  }
+
+  &.warning {
+    .nav {
+      background: map-get($all-colors, yellow600);
+    }
+
+    .alert {
+      @include alert-color(
+        map-get($all-colors, yellow500),
+        map-get($all-colors, white)
+      );
+    }
+  }
+
+  &.danger {
+    .nav {
+      background: map-get($all-colors, red800);
+    }
+
+    .alert {
+      @include alert-color(
+        map-get($all-colors, red700),
+        map-get($all-colors, white)
+      );
+    }
+  }
+}

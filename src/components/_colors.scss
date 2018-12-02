@@ -355,3 +355,14 @@ $linear-channel-values: 0 0.0003035269835488375 0.000607053967097675
   background: $color;
   color: $text;
 }
+
+@mixin alert-color($background, $border, $icon: 'null') {
+  $icon: if($icon == 'null', $border, $icon);
+
+  background: $background;
+  border-color: $border;
+
+  .iconContainer {
+    color: $icon;
+  }
+}

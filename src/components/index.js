@@ -1,4 +1,5 @@
 import Affix from './Affix';
+import Alert, { AlertGroup } from './Alert';
 import Badge from './Badge';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
@@ -33,6 +34,8 @@ export { registerIcon } from './Icon/library';
 
 export {
   Affix,
+  Alert,
+  AlertGroup,
   Badge,
   Button,
   ButtonGroup,
