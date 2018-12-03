@@ -61,6 +61,7 @@ Text.propTypes = {
     'black',
     'white',
     'inherit',
+    'link',
     'red',
     'red50',
     'red100',
