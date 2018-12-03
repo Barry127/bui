@@ -10,6 +10,9 @@ import Button from '../Button';
 import Icon from '../Icon';
 import Text from '../Text';
 
+/**
+ * AlertGroup groups several Alerts in one group.
+ */
 class AlertGroup extends Component {
   state = {
     index: 0

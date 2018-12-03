@@ -11,6 +11,9 @@ import Header from '../Header';
 import Icon from '../Icon';
 import Text from '../Text';
 
+/**
+ * Alerts are banners that communicate a message with a severity attached to it. They grab the user’s attention to provide critical information needed in context.
+ */
 class Alert extends Component {
   state = {
     open: true
