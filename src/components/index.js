@@ -1,5 +1,6 @@
 import Affix from './Affix';
 import Alert, { AlertGroup } from './Alert';
+import Anchor, { AnchorLink } from './Anchor';
 import Badge from './Badge';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
@@ -36,6 +37,8 @@ export {
   Affix,
   Alert,
   AlertGroup,
+  Anchor,
+  AnchorLink,
   Badge,
   Button,
   ButtonGroup,

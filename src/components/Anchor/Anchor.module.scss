@@ -1,0 +1,38 @@
+@import '../_colors.scss';
+@import '../_typography.scss';
+
+.anchor {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li li .link {
+    padding-left: 18px;
+  }
+
+  li li li .link {
+    padding-left: 30px;
+  }
+}
+
+.link {
+  @include default-text;
+  @include truncate;
+  display: block;
+  padding: 0 6px;
+  border-left: 2px solid map-get($all-colors, grey200);
+  text-decoration: none;
+  color: $text-color;
+  transition: border-color 0.2s ease-in;
+
+  &.active,
+  &:hover {
+    color: inherit;
+  }
+
+  &.active {
+    border-color: currentColor;
+  }
+}
