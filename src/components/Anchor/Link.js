@@ -6,6 +6,9 @@ import styles from './Anchor.module.scss';
 
 import Text from '../Text';
 
+/**
+ * An AnchorLink is a hyperlinks in an Anchor menu
+ */
 class AnchorLink extends Component {
   onScroll = ev => {
     const { onClick, to } = this.props;

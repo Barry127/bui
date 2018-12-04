@@ -9,6 +9,9 @@ import { makeList, getActive } from './helpers';
 
 import Link from './Link';
 
+/**
+ * An Anchor is a menu with hyperlinks to scroll in a page
+ */
 class Anchor extends Component {
   static Link = Link;
 
