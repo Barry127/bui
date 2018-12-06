@@ -14,6 +14,21 @@
       margin-bottom: 0;
     }
   }
+
+  &.highlightLinks {
+    a {
+      color: map-get($all-colors, link);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: map-get($all-colors, blue800);
+      }
+    }
+  }
 }
 
 .left {

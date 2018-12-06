@@ -13,6 +13,7 @@ const Text = ({
   children,
   className,
   color,
+  highlightLinks,
   inline,
   italic,
   size,
@@ -28,6 +29,7 @@ const Text = ({
     styles[color],
     styles[weight],
     {
+      [styles.highlightLinks]: highlightLinks,
       [styles.italic]: italic,
       [styles.truncate]: truncate,
       [styles.underline]: underline
@@ -217,6 +219,8 @@ Text.propTypes = {
     'coolgray800',
     'coolgray900'
   ]),
+  /** Should links (a tags) be styled in link color */
+  highlightLinks: p.bool,
   /** Should the text be inline (<span>) or block (<div>) */
   inline: p.bool,
   /** Should text be italic */
@@ -230,6 +234,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
+  highlightLinks: false,
   inline: false,
   italic: false,
   truncate: false,
