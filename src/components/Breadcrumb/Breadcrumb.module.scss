@@ -1,0 +1,11 @@
+@import '../_colors.scss';
+
+.breadcrumb {
+  margin: 6px 0;
+}
+
+.separator {
+  margin-left: 6px;
+  margin-right: 6px;
+  color: map-get($all-colors, grey500);
+}

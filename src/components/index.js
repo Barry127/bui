@@ -2,6 +2,7 @@ import Affix from './Affix';
 import Alert, { AlertGroup } from './Alert';
 import Anchor, { AnchorLink } from './Anchor';
 import Badge from './Badge';
+import Breadcrumb, { BreadcrumbItem } from './Breadcrumb';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Checkbox from './Checkbox';
@@ -40,6 +41,8 @@ export {
   Anchor,
   AnchorLink,
   Badge,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonGroup,
   Checkbox,
