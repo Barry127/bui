@@ -39,7 +39,7 @@ class Anchor extends Component {
     window.removeEventListener('resize', this.onResize);
   }
 
-  initialize() {
+  initialize = () => {
     const { children, offsetTop } = this.props;
     const list = makeList(children);
 
@@ -47,7 +47,7 @@ class Anchor extends Component {
       active: getActive(list, offsetTop),
       list
     });
-  }
+  };
 
   _onScroll = () => {
     const { offsetTop } = this.props;
