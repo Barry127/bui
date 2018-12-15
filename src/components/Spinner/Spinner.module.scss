@@ -1,0 +1,98 @@
+@import '../_colors.scss';
+
+.spinner {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  margin: 6px 12px 6px 0;
+
+  svg {
+    margin: 0;
+  }
+}
+
+.container {
+  margin: 0;
+  position: relative;
+
+  .spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    transition: opacity 0.2s ease-in, filter 0.2s ease-in;
+  }
+
+  &.spinning {
+    .content {
+      filter: blur(1px);
+      opacity: 0.3;
+    }
+
+    .spinner {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+}
+
+.sm svg {
+  width: 18px;
+  height: 18px;
+}
+
+.md svg {
+  width: 36px;
+  height: 36px;
+}
+
+.lg svg {
+  width: 72px;
+  height: 72px;
+}
+
+.circle {
+  svg {
+    stroke-linecap: round;
+    stroke-width: 2px;
+    fill: none;
+  }
+}
+
+.dots {
+  svg {
+    stroke-width: 2px;
+    fill: none;
+  }
+}
+
+.primary {
+  @include spinner-color(map-get($all-colors, blue500));
+}
+
+.success {
+  @include spinner-color(map-get($all-colors, green400));
+}
+
+.warning {
+  @include spinner-color(map-get($all-colors, yellow400));
+}
+
+.danger {
+  @include spinner-color(map-get($all-colors, red600));
+}
+
+.info {
+  @include spinner-color(map-get($all-colors, cyan300));
+}

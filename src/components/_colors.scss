@@ -366,3 +366,19 @@ $linear-channel-values: 0 0.0003035269835488375 0.000607053967097675
     color: $icon;
   }
 }
+
+@mixin spinner-color($color) {
+  &.circle {
+    svg {
+      stroke: $color;
+
+      circle {
+        stroke: map-get($all-colors, grey300);
+      }
+    }
+  }
+
+  &.dots {
+    stroke: $color;
+  }
+}

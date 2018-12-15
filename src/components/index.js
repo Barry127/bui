@@ -26,6 +26,7 @@ import Progress, {
 } from './Progress';
 import RadioGroup, { RadioButton } from './RadioGroup';
 import Select from './Select';
+import Spinner from './Spinner';
 import Text from './Text';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
@@ -65,6 +66,7 @@ export {
   RadioButton,
   RadioGroup,
   Select,
+  Spinner,
   Text,
   TextInput,
   TextArea,
