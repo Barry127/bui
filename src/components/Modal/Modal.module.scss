@@ -1,0 +1,123 @@
+@import '../_colors.scss';
+@import '../_mixin.scss';
+@import '../_typography.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparentize(map-get($all-colors, grey400), 0.8);
+}
+
+.modal {
+  box-sizing: border-box;
+  z-index: 1000;
+  background: map-get($all-colors, white);
+  position: fixed;
+  border-radius: 3px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+
+  &.flat .content {
+    padding: 0;
+  }
+
+  &.maximized {
+    .title .maximize {
+      font-size: 18px;
+    }
+  }
+
+  .title {
+    padding: 12px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    display: flex;
+
+    .titleText {
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .button {
+      margin: 0;
+      font-size: 20px;
+      padding: 0;
+      line-height: 0;
+      text-align: center;
+    }
+
+    .maximize {
+      margin-right: 6px;
+      font-size: 16px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding: 12px;
+    overflow: auto;
+    @include scrollbars;
+
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
+  .footer {
+    padding: 12px 18px 12px 12px;
+    text-align: right;
+  }
+
+  .button {
+    color: $text-color;
+  }
+}
+
+.blurAnimated {
+  transition: filter 0.1s ease-in;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.primary {
+  @include modal-color(map-get($all-colors, link));
+}
+
+.success {
+  @include modal-color(
+    map-get($all-colors, green400),
+    map-get($all-colors, white)
+  );
+}
+
+.info {
+  @include modal-color(
+    map-get($all-colors, cyan300),
+    map-get($all-colors, white)
+  );
+}
+
+.warning {
+  @include modal-color(map-get($all-colors, yellow400));
+}
+
+.danger {
+  @include modal-color(
+    map-get($all-colors, red600),
+    map-get($all-colors, white)
+  );
+}

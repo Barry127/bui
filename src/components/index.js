@@ -18,6 +18,7 @@ import Form, {
 import Header from './Header';
 import Icon from './Icon';
 import InputGroup from './InputGroup';
+import Modal from './Modal';
 import PasswordInput from './PasswordInput';
 import Progress, {
   ProgressBar,
@@ -58,6 +59,7 @@ export {
   Header,
   Icon,
   InputGroup,
+  Modal,
   PasswordInput,
   Progress,
   ProgressBar,

@@ -382,3 +382,27 @@ $linear-channel-values: 0 0.0003035269835488375 0.000607053967097675
     stroke: $color;
   }
 }
+
+@mixin modal-color($color, $text: 'default') {
+  $txt: if($text == 'default', choose-contrast-color($color), $text);
+  .title {
+    background: $color;
+
+    .titleText {
+      color: $txt;
+    }
+
+    .button {
+      color: $txt;
+
+      &:active,
+      &:focus:not(:active) {
+        box-shadow: 0 0 4px 4px rgba($txt, 0.5);
+      }
+
+      &:active {
+        border-color: transparent;
+      }
+    }
+  }
+}
