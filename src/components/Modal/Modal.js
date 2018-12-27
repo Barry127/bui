@@ -20,6 +20,9 @@ const SIZE_MAP = {
   xl: 1152
 };
 
+/**
+ * Modals provide information or help a user complete a task. They require the user to take an action or to dismiss them
+ */
 class Modal extends Component {
   state = {
     maximized: false,
