@@ -1,0 +1,145 @@
+@import '../_colors.scss';
+@import '../_mixin.scss';
+@import '../_typography.scss';
+
+.nav {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  background: map-get($all-colors, grey50);
+
+  > ul {
+    @include default-text;
+    @include scrollbars(true, map-get($all-colors, grey50));
+    overflow-y: hidden;
+    overflow-x: hidden;
+    flex: 1;
+
+    &:hover {
+      overflow-y: auto;
+    }
+  }
+
+  &.resizable {
+    .handle {
+      cursor: ew-resize;
+
+      &:hover {
+        &::after,
+        &::before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          content: ' ';
+          width: 2px;
+        }
+
+        &::after {
+          right: -2px;
+        }
+
+        &::before {
+          right: 2px;
+        }
+      }
+    }
+  }
+
+  .handle {
+    width: 2px;
+    background: map-get($all-colors, grey300);
+  }
+
+  .resizing {
+    cursor: ew-resize;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li.active > a {
+    background: map-get($all-colors, coolgrey100);
+  }
+
+  a {
+    @include truncate;
+    color: $text-color;
+    text-decoration: none;
+    display: block;
+    padding-left: 18px;
+    padding-right: 6px;
+    position: relative;
+
+    &:hover {
+      background: map-get($all-colors, grey200);
+    }
+
+    &:focus {
+      outline: none;
+      background: map-get($all-colors, grey200);
+    }
+
+    .icon {
+      position: absolute;
+      left: 0;
+      color: $text-color;
+      top: 50%;
+      transform: translateY(-60%);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  .open > a > .icon {
+    transform: translateY(-60%) rotate(90deg);
+  }
+
+  ul ul a {
+    padding-left: 24px;
+
+    .icon {
+      left: 6px;
+    }
+  }
+
+  ul ul ul a {
+    padding-left: 30px;
+
+    .icon {
+      left: 12px;
+    }
+  }
+
+  ul ul ul ul a {
+    padding-left: 36px;
+
+    .icon {
+      left: 18px;
+    }
+  }
+}
+
+.nav > ul > li {
+  margin-bottom: 12px;
+
+  & > a {
+    color: map-get($all-colors, black);
+    @include medium;
+
+    &.title:hover {
+      background: none;
+    }
+  }
+}

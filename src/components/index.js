@@ -27,6 +27,7 @@ import Progress, {
 } from './Progress';
 import RadioGroup, { RadioButton } from './RadioGroup';
 import Select from './Select';
+import SideNav, { SideNavGroup, SideNavItem } from './SideNav';
 import Spinner from './Spinner';
 import Text from './Text';
 import TextInput from './TextInput';
@@ -68,6 +69,9 @@ export {
   RadioButton,
   RadioGroup,
   Select,
+  SideNav,
+  SideNavGroup,
+  SideNavItem,
   Spinner,
   Text,
   TextInput,
