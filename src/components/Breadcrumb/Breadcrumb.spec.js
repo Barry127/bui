@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow, render, mount } from 'enzyme';
+import { shallow, render } from 'enzyme';
 
 import Breadcrumb from './Breadcrumb';
 import Item from './Item';
 import styles from './Breadcrumb.module.scss';
 
 const rootSelector = `.${styles.breadcrumb}`;
-const itemSelector = `.${styles.item}`;
 const separatorSelector = `.${styles.separator}`;
 
 const defaultBreadcrumb = (props = {}, method = shallow) =>
