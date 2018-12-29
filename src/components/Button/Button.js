@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import p from 'prop-types';
 import cx from 'classnames';
 
@@ -7,55 +7,51 @@ import styles from './Button.module.scss';
 /**
  * Buttons execute an action or change the state of an application. Button text helps users understand what action will occur when they click or tap.
  */
-const Button = forwardRef(
-  (
+const Button = ({
+  active,
+  children,
+  className,
+  color,
+  disabled,
+  fluid,
+  href,
+  icon,
+  innerRef,
+  outline,
+  size,
+  type,
+  ...props
+}) => {
+  const classes = cx(
+    styles.button,
+    styles[color],
+    styles[size],
     {
-      active,
-      children,
-      className,
-      color,
-      disabled,
-      fluid,
-      href,
-      icon,
-      outline,
-      size,
-      type,
-      ...props
+      [styles.active]: active,
+      [styles.fluid]: fluid,
+      [styles.icon]: icon,
+      [styles.outline]: outline
     },
-    ref
-  ) => {
-    const classes = cx(
-      styles.button,
-      styles[color],
-      styles[size],
-      {
-        [styles.active]: active,
-        [styles.fluid]: fluid,
-        [styles.icon]: icon,
-        [styles.outline]: outline
-      },
-      'bui-Button',
-      className
-    );
+    'bui-Button',
+    className
+  );
 
-    return type === 'link' ? (
-      <a ref={ref} className={classes} href={href} role="button" {...props}>
-        <span>{children}</span>
-      </a>
-    ) : (
-      <button
-        ref={ref}
-        className={classes}
-        disabled={disabled}
-        type={type}
-        {...props}
-      >
-        {children}
-      </button>
-    );
-  }
-);
+  return type === 'link' ? (
+    <a ref={innerRef} className={classes} href={href} role="button" {...props}>
+      <span>{children}</span>
+    </a>
+  ) : (
+    <button
+      ref={innerRef}
+      className={classes}
+      disabled={disabled}
+      type={type}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 
 Button.propTypes = {
   /** Style button as active state */
