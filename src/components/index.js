@@ -29,6 +29,7 @@ import RadioGroup, { RadioButton } from './RadioGroup';
 import Select from './Select';
 import SideNav, { SideNavGroup, SideNavItem } from './SideNav';
 import Spinner from './Spinner';
+import Table from './Table';
 import Text from './Text';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
@@ -73,6 +74,7 @@ export {
   SideNavGroup,
   SideNavItem,
   Spinner,
+  Table,
   Text,
   TextInput,
   TextArea,
