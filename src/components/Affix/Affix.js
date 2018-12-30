@@ -7,8 +7,9 @@ import throttle from 'lodash/throttle';
  */
 class Affix extends Component {
   state = {
-    originalTop: 0,
-    scrollTop: 0
+    floating: false,
+    originalHeight: 0,
+    originalTop: 0
   };
 
   constructor() {
@@ -18,10 +19,14 @@ class Affix extends Component {
   }
 
   componentDidMount() {
-    const { top } = this.affix.getBoundingClientRect();
-    this.setState({
-      orignalTop: window.pageYOffset + top
-    });
+    const { top, height } = this.affix.getBoundingClientRect();
+    this.setState(
+      {
+        originalHeight: height,
+        originalTop: window.pageYOffset + top
+      },
+      this._scroll
+    );
     window.addEventListener('scroll', this.scroll);
   }
 
@@ -30,8 +35,13 @@ class Affix extends Component {
   }
 
   _scroll = () => {
+    const { originalTop } = this.state;
+    const { offsetTop } = this.props;
+
     const scrollTop = window.pageYOffset;
-    this.setState({ scrollTop });
+    const floating = scrollTop - originalTop + offsetTop > 0;
+
+    this.setState({ floating });
   };
 
   setRef = ref => {
@@ -44,25 +54,25 @@ class Affix extends Component {
   };
 
   render() {
-    const { children, innerRef, offsetTop, style, ...props } = this.props;
-    const { orignalTop, scrollTop } = this.state;
-
-    const translate = Math.max(0, scrollTop - orignalTop + offsetTop);
-
-    const styles = {
-      verticalAlign: 'middle',
-      display: 'inline-block',
-      position: 'relative',
-      transform: `translateY(${translate}px)`
-    };
-
-    if (translate > 0) {
-      styles.zIndex = 10;
-    }
+    const { children, innerRef, offsetTop, ...props } = this.props;
+    const { floating, originalHeight } = this.state;
 
     return (
-      <div ref={this.setRef} style={{ ...style, ...styles }} {...props}>
-        {children}
+      <div ref={this.setRef} {...props}>
+        {floating && <div style={{ height: originalHeight }} />}
+        <div
+          style={
+            floating
+              ? {
+                  top: offsetTop,
+                  position: 'fixed',
+                  zIndex: 10
+                }
+              : {}
+          }
+        >
+          {children}
+        </div>
       </div>
     );
   }

@@ -10,7 +10,6 @@ it('Renders Affix with Children', () => {
     </Affix>
   );
 
-  expect(wrapper.find('div').length).toBe(1);
   expect(wrapper.find('p').length).toBe(1);
   expect(wrapper.root().text()).toBe('Content');
 });
@@ -33,11 +32,7 @@ describe('Scrolling', () => {
       </Affix>
     );
 
-    expect(wrapper.find('div').prop('style')).not.toHaveProperty('zIndex');
-    expect(wrapper.find('div').prop('style')).toHaveProperty(
-      'transform',
-      'translateY(0px)'
-    );
+    expect(wrapper.state().floating).toBe(false);
 
     window.pageYOffset = 100;
 
@@ -45,11 +40,7 @@ describe('Scrolling', () => {
     wrapper.instance()._scroll();
     wrapper.update();
 
-    expect(wrapper.find('div').prop('style')).toHaveProperty('zIndex', 10);
-    expect(wrapper.find('div').prop('style')).toHaveProperty(
-      'transform',
-      'translateY(32px)'
-    );
+    expect(wrapper.state().floating).toBe(true);
   });
 
   it('Handles scrolling with custom offset', () => {
@@ -59,11 +50,7 @@ describe('Scrolling', () => {
       </Affix>
     );
 
-    expect(wrapper.find('div').prop('style')).not.toHaveProperty('zIndex');
-    expect(wrapper.find('div').prop('style')).toHaveProperty(
-      'transform',
-      'translateY(0px)'
-    );
+    expect(wrapper.state().floating).toBe(false);
 
     window.pageYOffset = 180;
 
@@ -71,10 +58,6 @@ describe('Scrolling', () => {
     wrapper.instance()._scroll();
     wrapper.update();
 
-    expect(wrapper.find('div').prop('style')).toHaveProperty('zIndex', 10);
-    expect(wrapper.find('div').prop('style')).toHaveProperty(
-      'transform',
-      'translateY(50px)'
-    );
+    expect(wrapper.state().floating).toBe(true);
   });
 });
