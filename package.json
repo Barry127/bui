@@ -4,8 +4,8 @@
   "description": "bui React Components",
   "private": true,
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "author": {
     "name": "Barry de Kleijn",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "7.1.0",
     "@barry127/bui-feather-icons": "^0.1.0",
+    "@reach/router": "^1.2.1",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -75,6 +76,7 @@
     "react-dev-utils": "^6.0.5",
     "react-docgen": "^2.21.0",
     "react-dom": "^16.5.2",
+    "react-syntax-highlighter": "^10.1.2",
     "resolve": "1.8.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.66.6",

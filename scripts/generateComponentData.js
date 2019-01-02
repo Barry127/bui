@@ -6,6 +6,7 @@ const chokidar = require('chokidar');
 const parse = require('react-docgen').parse;
 
 const paths = {
+  examples: path.join(__dirname, '..', 'src', 'docs', 'pages', 'components'),
   components: path.join(__dirname, '..', 'src', 'components'),
   output: path.join(__dirname, '..', 'config', 'componentData.js')
 };
@@ -29,6 +30,7 @@ function generate() {
         `An error occurred while attempting to generate metadata for ${componentName}: ${err}`
       );
     }
+    return null;
   });
 
   fs.writeFileSync(
@@ -55,13 +57,43 @@ function getComponentData(componentName) {
   return {
     ...metadata,
     name: componentName,
-    code: content
-    // examples could be added
+    code: content,
+    examples: getExamples(componentName)
   };
+}
+
+function getExamples(componentName) {
+  const dirPath = path.join(paths.examples, componentName, 'examples');
+  let files = [];
+  try {
+    files = getFiles(dirPath);
+  } catch (err) {
+    return {};
+  }
+
+  return files.reduce((examples, file) => {
+    const filePath = path.join(dirPath, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const name = file.slice(0, -3);
+    examples[name] = {
+      name,
+      file,
+      component: componentName,
+      code: content
+    };
+
+    return examples;
+  }, {});
 }
 
 function getDirectories(dirPath) {
   return fs
     .readdirSync(dirPath)
     .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory());
+}
+
+function getFiles(dirPath) {
+  return fs
+    .readdirSync(dirPath)
+    .filter(file => fs.statSync(path.join(dirPath, file)).isFile());
 }
