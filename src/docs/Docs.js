@@ -15,6 +15,7 @@ const Docs = () => (
           <pages.GettingStarted path="getting-started" />
           <pages.Affix path="/components/Affix" />
           <pages.Alert path="/components/Alert" />
+          <pages.Anchor path="/components/Anchor" />
           <App path="app" />
         </Router>
       </article>

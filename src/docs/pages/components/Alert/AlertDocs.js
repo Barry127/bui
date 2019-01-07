@@ -142,12 +142,9 @@ const AlertDocs = () => (
         <p>Use error alerts for errors, malfunctions and critical issues.</p>
       </div>
     </div>
-    <Header level={2} id="dodont">
-      Do{"'"}s & Don{"'"}ts
-    </Header>
-    <div className="doc-cols dd">
+    <div id="dodont" className="doc-cols dd">
       <div>
-        <Header level={3} color="green700">
+        <Header level={2} color="green700">
           Do
         </Header>
         <ul>
@@ -163,7 +160,7 @@ const AlertDocs = () => (
         </ul>
       </div>
       <div>
-        <Header level={3} color="red700">
+        <Header level={2} color="red700">
           Don{"'"}t
         </Header>
         <ul>

@@ -17,7 +17,7 @@ const columns = [
     render: (property, row) => {
       if (row.type === 'enum') {
         return (
-          <React.Fragment>
+          <div className="enum">
             {property}, options:{' '}
             {row.options.map((option, i) => (
               <React.Fragment key={option}>
@@ -25,7 +25,7 @@ const columns = [
                 {i !== row.options.length - 1 && ', '}
               </React.Fragment>
             ))}
-          </React.Fragment>
+          </div>
         );
       }
 
