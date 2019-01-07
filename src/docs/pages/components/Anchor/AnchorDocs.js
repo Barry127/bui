@@ -6,7 +6,6 @@ import { Alert, Header, Text } from '../../../../components';
 import DocsAnchor from '../../../Anchor';
 import PropsTable from '../PropsTable';
 import Example from '../Example';
-import Playground from '../Playground';
 
 const component = getComponent('Anchor');
 
