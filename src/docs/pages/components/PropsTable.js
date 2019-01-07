@@ -13,7 +13,24 @@ const columns = [
   {
     key: 'description',
     dataField: 'description',
-    title: 'Description'
+    title: 'Description',
+    render: (property, row) => {
+      if (row.type === 'enum') {
+        return (
+          <React.Fragment>
+            {property}, options:{' '}
+            {row.options.map((option, i) => (
+              <React.Fragment key={option}>
+                <code>{option}</code>
+                {i !== row.options.length - 1 && ', '}
+              </React.Fragment>
+            ))}
+          </React.Fragment>
+        );
+      }
+
+      return property;
+    }
   },
   {
     key: 'type',
@@ -53,6 +70,10 @@ const normalizeProps = props =>
     required: props[property].required,
     description: props[property].description,
     type: props[property].type.name,
+    options:
+      props[property].type.name === 'enum'
+        ? props[property].type.value.map(option => option.value)
+        : [],
     default: props[property].defaultValue
       ? props[property].defaultValue.value
       : '-'

@@ -511,154 +511,158 @@ class App extends Component {
           50%
         </Progress>
         <hr />
-        <Form layout="horizontal">
-          <FormRow label="Program" htmlFor="select">
-            <Select
-              searchable={true}
-              icon="feather-code"
-              id="select"
-              options={values}
-              name="select-name"
-              ref={console.log}
-              onChange={selection => {
-                // console.log(selection);
-                this.setState({ select: selection && selection.value });
-              }}
-              value={this.state.select}
-            />
-          </FormRow>
-          <FormTextInput
-            icon="feather-user"
-            label="Username"
-            id="username"
-            name="username"
-            ref={console.log}
-          />
-          <FormPasswordInput
-            icon="feather-lock"
-            label="Password"
-            id="password"
-            name="password"
-            ref={console.log}
-          />
-          <FormTypeAheadInput
-            icon="feather-code"
-            label="Language"
-            id="language"
-            items={[
-              'JavaScript',
-              'Java',
-              'PHP',
-              'Perl',
-              'C',
-              'C++',
-              'Rust',
-              'Lua'
-            ]}
-            name="language"
-            ref={console.log}
-          />
-          <FormTextArea
-            label="Comment"
-            id="comment"
-            name="comment"
-            ref={console.log}
-          />
-          <FormRadioGroup
-            inline={true}
-            label="Superhero"
-            name="hero"
-            value={this.state.radio}
-            onChange={ev => this.setState({ radio: ev.target.value })}
-            options={[
-              { value: 'dw', label: 'Doctor Who' },
-              {
-                value: 'dal',
-                label: () => <span>Daleks</span>,
-                hasError: true
-              },
-              {
-                value: 'ms',
-                label: 'The Master',
-                disabled: true
-              }
-            ]}
-          />
-          <FormRow>
-            <Checkbox
-              name="all"
-              checked={this.state.a && this.state.b}
-              indeterminate={this.state.a !== this.state.b}
-              onChange={() =>
-                this.state.a && this.state.b
-                  ? this.setState({ a: false, b: false })
-                  : this.setState({ a: true, b: true })
-              }
-            >
-              All
-            </Checkbox>
-          </FormRow>
-          <FormRow>
-            <Checkbox
-              name="a"
-              checked={this.state.a}
-              onChange={ev => {
-                this.setState({ a: ev.target.checked });
-              }}
-            >
-              Checkbox A
-            </Checkbox>
-          </FormRow>
-          <FormRow>
-            <Checkbox
-              name="b"
-              checked={this.state.b}
-              onChange={ev => {
-                this.setState({ b: ev.target.checked });
-              }}
-            >
-              Checkbox B
-            </Checkbox>
-          </FormRow>
-          <FormRow>
-            <Button id="save" type="submit" color="primary">
-              Save
-            </Button>
-              <Button type="reset">Cancel</Button>
-          </FormRow>
-        </Form>
-        <hr />
-        <InputGroup>
-          <TypeAheadInput
-            id="ac"
-            name="ac"
-            items={['JavaScript', 'Java', 'PHP', 'Perl', 'C', 'C++', 'Rust']}
-            value={this.state.value}
-            onChange={ev => this.setState({ value: ev.target.value })}
-          />
-          <Button color="primary" outline icon>
-            <Icon icon="feather-tag" />
-          </Button>
-        </InputGroup>
-        <InputGroup size="lg" id="btns">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </InputGroup>
-        <ButtonGroup>
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-        <ButtonGroup>
-          <Button color="success">Four</Button>
-          <Button size="lg" color="warning">
-            Five
-          </Button>
-          <Button color="danger">Six</Button>
-        </ButtonGroup>
-        <TextArea id="ta" name="ta" rows={10} maxRows={15} />
         {/* */}
+            <Form layout="horizontal">
+              <FormRow label="Program" htmlFor="select">
+                <Select
+                  searchable={true}
+                  icon="feather-code"
+                  id="select"
+                  options={values}
+                  name="select-name"
+                  ref={console.log}
+                  onChange={selection => {
+                    // console.log(selection);
+                    this.setState({ select: selection && selection.value });
+                  }}
+                  value={this.state.select}
+                />
+              </FormRow>
+              <FormTextInput
+                icon="feather-user"
+                label="Username"
+                id="username"
+                name="username"
+                ref={console.log}
+              />
+              <FormPasswordInput
+                icon="feather-lock"
+                label="Password"
+                id="password"
+                name="password"
+                ref={console.log}
+              />
+              <FormTypeAheadInput
+                icon="feather-code"
+                label="Language"
+                id="language"
+                items={[
+                  'JavaScript',
+                  'Java',
+                  'PHP',
+                  'Perl',
+                  'C',
+                  'C++',
+                  'Rust',
+                  'Lua'
+                ]}
+                name="language"
+                ref={console.log}
+              />
+              <FormTextArea
+                label="Comment"
+                id="comment"
+                name="comment"
+                ref={console.log}
+              />
+              <FormRadioGroup
+                inline={true}
+                label="Superhero"
+                name="hero"
+                value={this.state.radio}
+                onChange={ev => this.setState({ radio: ev.target.value })}
+                options={[
+                  { value: 'dw', label: 'Doctor Who' },
+                  {
+                    value: 'dal',
+                    label: () => <span>Daleks</span>,
+                    hasError: true
+                  },
+                  { value: 'ms', label: 'The Master', disabled: true }
+                ]}
+              />
+              <FormRow>
+                <Checkbox
+                  name="all"
+                  checked={this.state.a && this.state.b}
+                  indeterminate={this.state.a !== this.state.b}
+                  onChange={() =>
+                    this.state.a && this.state.b
+                      ? this.setState({ a: false, b: false })
+                      : this.setState({ a: true, b: true })
+                  }
+                >
+                  All
+                </Checkbox>
+              </FormRow>
+              <FormRow>
+                <Checkbox
+                  name="a"
+                  checked={this.state.a}
+                  onChange={ev => {
+                    this.setState({ a: ev.target.checked });
+                  }}
+                >
+                  Checkbox A
+                </Checkbox>
+              </FormRow>
+              <FormRow>
+                <Checkbox
+                  name="b"
+                  checked={this.state.b}
+                  onChange={ev => {
+                    this.setState({ b: ev.target.checked });
+                  }}
+                >
+                  Checkbox B
+                </Checkbox>
+              </FormRow>
+              <FormRow>
+                <Button id="save" type="submit" color="primary">
+                  Save
+                </Button>
+                <Button type="reset">Cancel</Button>
+              </FormRow>
+            </Form>
+            <hr />
+            <InputGroup>
+              <TypeAheadInput
+                id="ac"
+                name="ac"
+                items={[
+                  'JavaScript',
+                  'Java',
+                  'PHP',
+                  'Perl',
+                  'C',
+                  'C++',
+                  'Rust'
+                ]}
+                value={this.state.value}
+                onChange={ev => this.setState({ value: ev.target.value })}
+              />
+              <Button color="primary" outline icon>
+                <Icon icon="feather-tag" />
+              </Button>
+            </InputGroup>
+            <InputGroup size="lg" id="btns">
+              <Button>One</Button>
+              <Button>Two</Button>
+              <Button>Three</Button>
+            </InputGroup>
+            <ButtonGroup>
+              <Button>One</Button>
+              <Button>Two</Button>
+              <Button>Three</Button>
+            </ButtonGroup>
+            <ButtonGroup>
+              <Button color="success">Four</Button>
+              <Button size="lg" color="warning">
+                Five
+              </Button>
+              <Button color="danger">Six</Button>
+            </ButtonGroup>
+            <TextArea id="ta" name="ta" rows={10} maxRows={15} />
           </div>
         </div>
       </React.StrictMode>

@@ -9,8 +9,6 @@ import Example from '../Example';
 
 const component = getComponent('Affix');
 
-console.log(component.examples);
-
 const AffixDocs = () => (
   <Text>
     <Header id="component">{component.displayName}</Header>

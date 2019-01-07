@@ -7,13 +7,14 @@ import App from '../App';
 import pages from './pages';
 
 const Docs = () => (
-  <div className="main">
+  <div className="main" id="top">
     <Nav />
     <main>
       <article>
         <Router>
           <pages.GettingStarted path="getting-started" />
           <pages.Affix path="/components/Affix" />
+          <pages.Alert path="/components/Alert" />
           <App path="app" />
         </Router>
       </article>

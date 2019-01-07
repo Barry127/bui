@@ -7,6 +7,8 @@ import components from '../../config/componentData';
 
 const navTo = ev => {
   ev.preventDefault();
+  const top = document.getElementById('top');
+  top.scrollIntoView();
   navigate(ev.target.href);
 };
 

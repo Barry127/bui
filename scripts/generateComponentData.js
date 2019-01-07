@@ -18,7 +18,7 @@ const watchMode = process.argv.includes('--watch');
 generate();
 
 if (watchMode) {
-  chokidar.watch([paths.components]).on('change', generate);
+  chokidar.watch([paths.components, paths.examples]).on('change', generate);
 }
 
 function generate() {

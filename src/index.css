@@ -46,6 +46,36 @@ main > article {
   color: #003d79;
 }
 
+.doc-props-table td:nth-child(2) code {
+  color: #000;
+  background: #f5f5f5;
+}
+
+.doc-cols {
+  display: flex;
+}
+
+.doc-cols > * {
+  flex: 1;
+  margin: 0 6px;
+}
+
+.doc-cols > *:first-child {
+  margin-left: 0;
+}
+
+.doc-cols > *:last-child {
+  margin-right: 0;
+}
+
+.dd {
+  font-size: 0.85em;
+}
+
+.dd ul {
+  padding-left: 18px;
+}
+
 @media screen and (max-width: 950px) {
   .doc-anchor {
     display: none;
