@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 import React from 'react';
 import p from 'prop-types';
 
@@ -8,7 +9,12 @@ const columns = [
     key: 'property',
     dataField: 'property',
     title: 'Property',
-    render: property => <code>{property}</code> // eslint-disable-line react/display-name
+    render: (property, { required }) => (
+      <code>
+        {property}
+        {required && <sup>*</sup>}
+      </code>
+    )
   },
   {
     key: 'description',

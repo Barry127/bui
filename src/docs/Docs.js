@@ -16,6 +16,7 @@ const Docs = () => (
           <pages.Affix path="/components/Affix" />
           <pages.Alert path="/components/Alert" />
           <pages.Anchor path="/components/Anchor" />
+          <pages.Badge path="/components/Badge" />
           <App path="app" />
         </Router>
       </article>

@@ -38,7 +38,8 @@ main > article {
   margin: 12px 0 !important;
 }
 
-.doc-props-table td code {
+.doc-props-table td code,
+.doc-props-table td sup {
   color: #a32100;
 }
 
