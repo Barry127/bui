@@ -106,7 +106,8 @@
     "docs:deploy": "gh-pages -d build",
     "start": "npm-run-all --parallel docs:start docs:gen:watch",
     "test": "node scripts/test.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run snyk-protect; npm run build",
+    "snyk-protect": "snyk protect"
   },
   "eslintConfig": {
     "extends": [
@@ -192,6 +193,8 @@
     "mousetrap": "^1.6.2",
     "prop-types": "^15.6.2",
     "react-autosize-textarea": "^5.0.0",
-    "react-spring": "^7.1.3"
-  }
+    "react-spring": "^7.1.3",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
